@@ -5,6 +5,6 @@ import { render } from 'react-dom'
 import Root from "./component/index"
 
 render(
-  <Root />,
+  <Root end={new Date(endTime)}/>,
   document.getElementById('app')
 );
