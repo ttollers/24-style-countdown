@@ -21514,8 +21514,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -21554,16 +21552,12 @@
 	    key: 'render',
 	    value: function render() {
 	      if (this.state.current > this.props.end) {
-	        var _React$createElement;
-
 	        audio.pause();
-	        return _react2.default.createElement('audio', (_React$createElement = {
-	          autoPlay: true,
-	          preload: true,
-	          src: '/champions-league.mp3',
-	          controls: false,
-	          crossOrigin: 'anonymous'
-	        }, _defineProperty(_React$createElement, 'autoPlay', true), _defineProperty(_React$createElement, 'loop', false), _React$createElement));
+	        return _react2.default.createElement(
+	          'h1',
+	          { className: 'text-center clock' },
+	          'Countdown Ended'
+	        );
 	      } else {
 	        setTimeout(this.tick, 1000);
 
@@ -21602,6 +21596,7 @@
 	  var minutes = Math.floor(t / 1000 / 60 % 60);
 	  var hours = Math.floor(t / (1000 * 60 * 60) % 24);
 	  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
 	  return {
 	    'total': t,
 	    'days': days,

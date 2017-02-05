@@ -27,15 +27,7 @@ class Home extends React.Component {
     if (this.state.current > this.props.end) {
       audio.pause();
       return (
-        <audio
-          autoPlay={true}
-          preload={true}
-          src="/champions-league.mp3"
-          controls={false}
-          crossOrigin="anonymous"
-          autoPlay={true}
-          loop={false}
-        />
+        <h1 className="text-center clock">Countdown Ended</h1>
       )
 
     } else {
@@ -49,8 +41,7 @@ class Home extends React.Component {
 
       const remain = this.state.count;
       return (
-        <h1 className="text-center clock">{remain.hours}:{remain.minutes}:{remain.seconds}
-        </h1>
+        <h1 className="text-center clock">{remain.hours}:{remain.minutes}:{remain.seconds}</h1>
       )
     }
 
@@ -69,6 +60,7 @@ function getTimeRemaining(endtime, now) {
   var minutes = Math.floor((t / 1000 / 60) % 60);
   var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
   var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  
   return {
     'total': t,
     'days': days,
