@@ -2,6 +2,7 @@ import React from 'react'
 import { curry } from "ramda"
 
 let audio = new Audio('-24-countdown.mp3');
+let champions = new Audio('champions.mp3');
 
 class Home extends React.Component {
 
@@ -26,8 +27,10 @@ class Home extends React.Component {
   render() {
     if (this.state.current > this.props.end) {
       audio.pause();
+      champions.load();
+      champions.play();
       return (
-        <h1 className="text-center clock">Countdown Ended</h1>
+        <h1 className="text-center clock">The Dream Team</h1>
       )
 
     } else {
